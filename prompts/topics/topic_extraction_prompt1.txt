@@ -1,0 +1,14 @@
+Je vais te présenter une liste de 50 projets citoyens, chacun avec un titre et une description. 
+Ta tâche consiste à analyser l’ensemble des projets et à extraire une liste de thèmes ou de sujets communs qui représentent les principales orientations ou problématiques abordées par ces initiatives.
+
+Chaque thème doit être :
+
+- Concis et représentatif.
+- Basé sur le contenu réel des projets, sans être inventé.
+- Accompagné d’une brève description (1 à 2 phrases).
+
+Merci de fournir une liste structurée de 20 à 30 thèmes, classés par ordre de pertinence.
+
+Voici la liste des projets :
+
+{get_50_random_projects}

@@ -1,0 +1,40 @@
+Vous êtes un modèle expert dans l’analyse des élections de budgets participatifs, spécifiquement dans le contexte de la ville de Toulouse, en France.
+
+À Toulouse, la municipalité organise des élections de budget participatif pour financer des projets citoyens. Chaque habitant peut voter pour entre 1 et 3 initiatives sur le site web https://jeparticipe.metropole.toulouse.fr/. Les votes sont anonymes.
+
+Une fois la période de vote terminée, les projets sont classés selon le nombre de voix obtenues et se voient attribuer un rang. Ensuite, les projets gagnants sont sélectionnés à l’aide d’un algorithme greedy : on commence par le projet ayant obtenu le plus de voix, puis on ajoute successivement les projets suivants les plus votés, tant que le budget disponible le permet.
+Lorsque le budget restant ne permet plus de financer le projet suivant dans la liste, on passe au suivant qui peut l’être, et ainsi de suite, jusqu’à épuisement du budget total de 8000000 euros.
+
+Voici la liste des 200 initiatives proposées lors de l’élection, avec leur nom, leur coût et le quartier auquel elles appartiennent :
+{last_projects_results}
+
+Votre tâche consiste à analyser le projet suivant, proposé dans le cadre d'une nouvelle élection de budget participatif.
+
+Projet : {project_name}
+Coût : {cost} €
+Quartier : {district}
+Description : {description}
+
+En vous basant sur :
+
+- Votre connaissance de Toulouse, de son contexte urbain, ainsi que de ses problématiques sociales et environnementales
+- Les caractéristiques du projet (thème, coût, quartier, etc.)
+- Les similarités avec des projets antérieurs ayant obtenu des voix
+- Les dynamiques typiques de vote dans les élections participatives
+- Lors de cette nouvelle élection, 183 alternatives ont été proposées.
+
+Veuillez répondre aux questions suivantes concernant ce projet :
+
+1. Quelle estimation raisonnable du nombre de voix ce projet pourrait-il obtenir ?
+2. Quelle serait sa position attendue dans le classement final ?
+3. Ce projet sera-t-il dans le Top 5 des voix ? Oui ou Non.
+4. Ce projet sera-t-il dans le Top 10 des voix ? Oui ou Non.
+
+Veuillez répondre aux questions suivantes concernant ce projet, sous la forme d’un dictionnaire avec les clés suivantes :
+
+{{
+    "voix_estimées": X,       # Nombre estimé de voix pour ce projet
+    "position_attendue": Y,   # Rang estimé dans le classement final
+    "dans_top_5": 1 ou 0,     # 1 si le projet sera dans le Top 5 des voix, 0 sinon
+    "dans_top_10": 1 ou 0,    # 1 si le projet sera dans le Top 10 des voix, 0 sinon
+}}

@@ -1,0 +1,50 @@
+Vous êtes un modèle expert dans l’analyse des élections de budgets participatifs, spécifiquement dans le contexte de la ville de Toulouse, en France.
+
+À Toulouse, la municipalité organise des élections de budget participatif pour financer des projets citoyens. Chaque habitant peut voter pour entre 1 et 3 initiatives sur le site web officiel. Les votes sont anonymes.
+
+Voici comment les projets sont sélectionnés :
+- Tous les projets sont classés selon le nombre de voix obtenues.
+- Un algorithme « greedy » est utilisé : on finance les projets dans l’ordre décroissant des voix, tant que le budget total n’est pas dépassé.
+- Si un projet est trop coûteux pour le budget restant, on passe au suivant.
+
+Informations générales sur l’élection de 2022 :
+
+- Nombre total de votants : 4532
+- Nombre total de projets : 200
+- Nombre total de voix exprimées : environ 11918
+- Plage des voix par projet : entre 2 et 492
+- Moyenne des voix : environ 110
+- Médiane : 95
+- Environ 70 % des projets ont reçu entre 70 et 250 voix
+- Le budget total disponible était de 8.000.000 €
+- On observe que les projets très coûteux (> 100.000 €) sont moins souvent sélectionnés, sauf s’ils sont dans le top 10 du nombre de voix.
+
+---
+
+Voici une sélection de projets similaires à celui que vous allez analyser, basés sur leur contenu, leur quartier ou leur coût. Chaque projet inclut son titre, son coût, son quartier et le nombre de voix obtenues :
+
+{top_k_similar_projects}
+
+Comparez attentivement les projets ci-dessus avec le projet à analyser en termes de thème, coût et quartier. Tirez des tendances pour estimer la popularité potentielle du nouveau projet.
+
+---
+
+Ce projet fait partie d’une nouvelle élection comprenant 183 projets proposés, dans des conditions similaires à celles de 2022.
+
+Veuillez maintenant analyser le projet suivant :
+
+Projet : {project_name}  
+Quartier : {district}  
+Coût estimé : {cost} €  
+Description : {description}
+
+En vous basant sur les projets similaires ci-dessus, les tendances générales de l’élection précédente et votre compréhension du contexte toulousain, estimez le nombre de voix que ce projet pourrait recevoir lors d'une élection similaire.
+
+Répondez uniquement au format JSON suivant. Ne dépassez pas 3 phrases dans "raisonnement" :
+
+```json
+{
+  "voix_estimées": X,
+  "intervalle_confiance": [a, b],
+  "raisonnement": "Résumé des éléments clés qui justifient cette estimation."
+}
