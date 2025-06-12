@@ -4,7 +4,7 @@ import ast
 
 import os
 from dotenv import load_dotenv
-from data_loader import load_and_prepare_projects
+from src.data_loader import load_and_prepare_projects
 
 """
 conn_params = {

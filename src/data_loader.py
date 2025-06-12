@@ -34,8 +34,8 @@ def clean_2024_description(text):
 def get_district_number(district_name):
     return district_name.split("-")[0].strip()
 
-def load_prediction_set(df, ids_path):
-    
+def load_prediction_set(df, ids_path, rows=37):
+
     ids_df = pd.read_csv(ids_path, sep=";")
 
     filtered = pd.merge(
@@ -49,6 +49,8 @@ def load_prediction_set(df, ids_path):
         columns={'votes': 'real_votes', 'rank': 'real_rank'},
         inplace=True
     )
+
+    filtered = filtered.iloc[0:rows,]
 
     return filtered
 

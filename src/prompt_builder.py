@@ -1,5 +1,5 @@
 import pandas as pd
-import rag
+import src.rag as rag
 
 def build_prompt(prompt_template_path, values):
     with open(prompt_template_path, 'r', encoding='utf-8') as f:

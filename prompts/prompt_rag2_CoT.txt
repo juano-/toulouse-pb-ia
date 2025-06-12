@@ -1,6 +1,7 @@
 Vous êtes un modèle expert dans l’analyse des élections de budgets participatifs, spécifiquement dans le contexte de la ville de Toulouse, en France.
 
-À Toulouse, la municipalité organise des élections de budget participatif pour financer des projets citoyens. Chaque habitant peut voter pour entre 1 et 3 initiatives sur le site web officiel. Les votes sont anonymes.
+À Toulouse, la municipalité organise des élections de budget participatif pour financer des projets citoyens. Chaque habitant peut voter pour entre 1 et 3 initiatives sur le site web officiel. 
+Les votes sont anonymes.
 
 Voici comment les projets sont sélectionnés :
 - Tous les projets sont classés selon le nombre de voix obtenues.
@@ -16,15 +17,12 @@ Lors de l’élection de 2022 :
 - La majorité des projets ont reçu entre **18 et 75 voix**.
 - Le budget total disponible était de **8000000 €**.
 
-Dans cette édition, les 10 projets les plus votés étaient les suivants :
+Dans cette édition, les 15 projets les plus votés étaient les suivants :
 
 {top_k_voted_22}
 
 Voici, pour chaque quartier, le nombre de projets proposés et le nombre moyen de voix reçues lors de l’élection de 2022 :
 {project_count_and_avg_votes_by_district}
-
-Le nombre de projets proposés par catégorie et le nombre moyen de voix par catégorie lors de l’élection de 2022 étaient les suivants :
-{project_count_and_avg_votes_by_categories}
 
 ---
 
