@@ -25,6 +25,30 @@ def load_and_prepare_projects(path_2022, path_2024):
 
     return df, df22_shuffled
 
+def load_and_prepare_voting_detail(path_2022, path_2024):
+    
+    origin_c = ['ID', 'project_id', 'project_title','created_at','checked_out_at','project_url','vote_finished']
+    rename_c = ['voter_id','project_id','project_title','created_at','checked_out_at','project_url','vote_finished']
+
+    df22 = pd.read_csv(path_2022, sep=";").filter(origin_c)
+    df22.columns = rename_c
+
+    df22 = df22[df22['vote_finished'] == True]
+    df22['project_id'] = df22.project_id.astype('int')
+    df22['date'] = df22['checked_out_at'].apply(pd.to_datetime).dt.date
+
+
+    origin_c = ['Decidim User ID', 'Project ID', 'Project Title', 'Created At', 'Checked Out At', 'Project URL', 'Vote Finished']
+    rename_c = ['voter_id','project_id','project_title','created_at','checked_out_at','project_url','vote_finished']
+
+    df24 = pd.read_csv(path_2024, sep=";").filter(origin_c)
+    df24.columns = rename_c
+
+    df24['project_id'] = df24.project_id.astype('int')
+    df24['date'] = df24['checked_out_at'].apply(pd.to_datetime).dt.date
+    
+    return df22, df24
+
 
 def clean_2024_description(text):
     patron = r"^.*L'IDÉE EXPRIMÉE PAR @\S+(?:\s*:\s*)?"
