@@ -8,10 +8,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-embedding_df2022 = pd.read_csv('../results/proj2022_embeddings_openai-3-large.csv')
+embedding_df2022 = pd.read_csv('../output/proj2022_embeddings_openai-3-large.csv')
 embedding_df2022['embedding'] = embedding_df2022['embedding'].apply(ast.literal_eval)
 
-embedding_df2024 = pd.read_csv('../results/proj2024_embeddings_openai-3-large.csv')
+embedding_df2024 = pd.read_csv('../output/proj2024_embeddings_openai-3-large.csv')
 embedding_df2024['embedding'] = embedding_df2024['embedding'].apply(ast.literal_eval)
 
 embedding_df = pd.concat([embedding_df2022, embedding_df2024]).reset_index(drop=True)
