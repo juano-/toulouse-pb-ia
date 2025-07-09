@@ -1,7 +1,7 @@
 import openai
 
 
-def call_openai_model(prompt, api_key, model = "gpt-4-turbo", temperature=0.4, max_tokens=4000):
+def call_openai_model(prompt, api_key, model = "gpt-4-turbo", temperature=0.0, max_tokens=4000):
 
     client = openai.OpenAI(api_key=api_key)
 

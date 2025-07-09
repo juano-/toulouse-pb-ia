@@ -21,11 +21,10 @@ def get_project_data(filepath):
     
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
-
-    project_id = int(filepath.split("/")[-1].split("_")[2].replace(".html",""))
-
+    
     soup = BeautifulSoup(content, 'html.parser')
 
+    project_id = int(filepath.split("/")[-1].split("_")[2].replace(".html",""))
     project_title = soup.find('h2', class_='heading2')
     project_description = soup.find('div', class_='ql-editor-display')    
 

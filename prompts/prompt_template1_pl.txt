@@ -1,0 +1,56 @@
+You are an expert model in analyzing participatory budgeting elections, specifically in the context of the city of Wroclaw, Poland.
+
+In Wroclaw, the municipality organizes participatory budgeting elections to fund citizen projects.
+Votes are anonymous.
+
+Once the voting period is over, the projects are ranked based on the number of votes they received. Then, the winning projects are selected using a greedy algorithm: starting with the project that received the most votes, the next most voted projects are added in sequence as long as the remaining budget allows it.
+When the next project on the list exceeds the available budget, the algorithm skips to the next project that can be funded, and so on, until the total budget of 8,000,000 euros is exhausted.
+
+Here is the list of the 52 initiatives proposed during the election, including their name, cost, and district:
+{last_projects_results}
+
+Your task is to analyze the following project, proposed as part of a new participatory budgeting election.
+
+Project: {project_name}
+Cost: {cost} €
+District: {district}
+Description: {description}
+
+Based on:
+
+Your knowledge of Wroclaw, its urban context, and its social and environmental issues
+
+The characteristics of the project (theme, cost, district, etc.)
+
+Similarities with previous projects that received votes
+
+Typical voting dynamics in participatory budgeting elections
+
+In this new election, 50 alternative projects have been proposed
+
+Please answer the following questions regarding this project:
+
+What is a reasonable estimate of the number of votes this project might receive?
+
+What would be its expected ranking in the final list?
+
+Is it likely that this project will be in the Top 5 by votes?
+
+Is it likely that this project will be in the Top 10 by votes?
+
+Please answer in the form of a JSON dictionary with the following keys:
+
+```json
+{{
+  "estimated_votes": X,               // Estimated number of votes (integer)
+  "confidence_interval": [a, b],     // Realistic interval (min, max)
+  "expected_rank": Y,                // Expected rank in the final list
+  "in_top_5": 1 or 0,                // 1 if likely to be in the top 5, else 0
+  "in_top_10": 1 or 0                // 1 if likely to be in the top 10, else 0
+}}
+
+Before giving an answer, take the time to reason thoroughly, but only explain the essential reasoning.
+
+**OUTPUT INSTRUCTIONS**  
+1. Present your reasoning in 5 to 8 key points, concisely.
+2. At the end, provide a valid JSON dictionary only, with no additional text.
