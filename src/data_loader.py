@@ -41,10 +41,36 @@ def load_and_prepare_projects(path_1, path_2, city='Toulouse'):
         df16['year'] = 2016
         df17['year'] = 2017
 
-        df16_shuffled = df16.sample(frac=1, random_state=42).reset_index(drop=True)
-
         df = pd.concat([df16, df17]).reset_index(drop=True)
-        return df, df16_shuffled
+
+        urban = pd.read_csv('data/wroclaw_urban_districts.csv', sep=";")
+        df_merge = pd.merge(left=df, 
+                            right=urban, 
+                            left_on='district', 
+                            right_on='location', 
+                            how="left")
+        
+
+        df_merge = df_merge.filter(['project_id', 
+                                    'project_name', 
+                                    'description', 
+                                    'category', 
+                                    'cost',
+                                    'district_name',
+                                    'votes', 
+                                    'district_number', 
+                                    'rank', 
+                                    'year']
+                                    )
+        
+        d16 = df_merge[df_merge['year'] == 2016].reset_index(drop=True)
+        df16_shuffled = d16.sample(frac=1, random_state=42).reset_index(drop=True)
+
+        df_merge.rename(
+            columns={'district_name': 'district'},
+            inplace=True)
+
+        return df_merge, df16_shuffled
 
     else:
         return {"message": "City Not Found.."}, 404
@@ -107,15 +133,14 @@ def load_prediction_set(df, ids_path, rows=37, city='Toulouse'):
     if city == 'Wroclaw':
 
         df = df[df['year'] == 2017].reset_index(drop=True)
-        
+  
         filtered = pd.merge(
             left=df,
             right=ids_df,
             on='project_id',
             how='inner'
-            ).filter(['project_id', 'project_name', 'description', 'cost', 'district', 'votes', 'rank'])
-        
-        
+            ).filter(['project_id', 'project_name', 'description', 'cost', 'district', 'district_number', 'votes', 'rank', 'year'])
+
         filtered.rename(
             columns={'votes': 'real_votes', 'rank': 'real_rank'},
             inplace=True)

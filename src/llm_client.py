@@ -17,5 +17,15 @@ def call_openai_model(prompt, api_key, model = "gpt-4-turbo", temperature=0.0, m
     print("LLM response receive!")
     return output_text
 
+def get_embeddings(text, api_key):
+    
+    client = openai.OpenAI(api_key=api_key) 
+    
+    response = client.embeddings.create(
+        model="text-embedding-3-large", 
+        input=text
+    )
+    return response.data[0].embedding
+
 
 

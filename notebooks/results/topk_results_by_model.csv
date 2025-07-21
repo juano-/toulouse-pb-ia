@@ -1,0 +1,81 @@
+Top-k,Accuracy,Recall,F1,Jaccard,Model,City
+1,1,1,1,1,GPT4 Turbo SP,Toulouse
+2,"0,95","0,5","0,5","0,33",GPT4 Turbo SP,Toulouse
+3,"0,89","0,33","0,33","0,2",GPT4 Turbo SP,Toulouse
+4,"0,84","0,25","0,25","0,14",GPT4 Turbo SP,Toulouse
+5,"0,84","0,4","0,4","0,25",GPT4 Turbo SP,Toulouse
+6,"0,78","0,33","0,33","0,2",GPT4 Turbo SP,Toulouse
+7,"0,78","0,43","0,43","0,27",GPT4 Turbo SP,Toulouse
+8,"0,78","0,5","0,5","0,33",GPT4 Turbo SP,Toulouse
+9,"0,73","0,44","0,44","0,29",GPT4 Turbo SP,Toulouse
+10,"0,68","0,4","0,4","0,25",GPT4 Turbo SP,Toulouse
+1,"0,94",0,0,0,GPT4 Turbo SP,Wroclaw
+2,"0,94","0,5","0,5","0,33",GPT4 Turbo SP,Wroclaw
+3,"0,86","0,25","0,29","0,2",GPT4 Turbo SP,Wroclaw
+4,"0,92","0,6","0,67","0,6",GPT4 Turbo SP,Wroclaw
+5,"0,94","0,83","0,83","0,67",GPT4 Turbo SP,Wroclaw
+6,"0,89","0,71","0,71","0,5",GPT4 Turbo SP,Wroclaw
+7,"0,83","0,62","0,62","0,4",GPT4 Turbo SP,Wroclaw
+8,"0,83","0,67","0,67","0,45",GPT4 Turbo SP,Wroclaw
+9,"0,83","0,7","0,7","0,5",GPT4 Turbo SP,Wroclaw
+10,"0,86","0,73","0,76","0,58",GPT4 Turbo SP,Wroclaw
+1,"0,94",0,0,0,KNN-15,Wroclaw
+2,"0,89",0,0,0,KNN-15,Wroclaw
+3,"0,83",0,0,0,KNN-15,Wroclaw
+4,"0,77",0,0,0,KNN-15,Wroclaw
+5,"0,71",0,0,0,KNN-15,Wroclaw
+6,"0,71","0,17","0,17","0,09",KNN-15,Wroclaw
+7,"0,66","0,14","0,14","0,08",KNN-15,Wroclaw
+8,"0,6","0,12","0,12","0,07",KNN-15,Wroclaw
+9,"0,66","0,33","0,33","0,2",KNN-15,Wroclaw
+10,"0,66","0,4","0,4","0,25",KNN-15,Wroclaw
+1,"0,94",0,0,0,Prob,Wroclaw
+2,"0,89",0,0,0,Prob,Wroclaw
+3,"0,83",0,0,0,Prob,Wroclaw
+4,"0,77",0,0,0,Prob,Wroclaw
+5,"0,77","0,2","0,2","0,11",Prob,Wroclaw
+6,"0,71","0,17","0,17","0,09",Prob,Wroclaw
+7,"0,71","0,29","0,29","0,17",Prob,Wroclaw
+8,"0,71","0,38","0,38","0,23",Prob,Wroclaw
+9,"0,77","0,56","0,56","0,38",Prob,Wroclaw
+10,"0,71","0,5","0,5","0,33",Prob,Wroclaw
+1,"0,95",0,0,0,KNN-15,Toulouse
+2,"0,89",0,0,0,KNN-15,Toulouse
+3,"0,84",0,0,0,KNN-15,Toulouse
+4,"0,84","0,25","0,25","0,14",KNN-15,Toulouse
+5,"0,78","0,2","0,2","0,11",KNN-15,Toulouse
+6,"0,73","0,17","0,17","0,09",KNN-15,Toulouse
+7,"0,73","0,29","0,29","0,17",KNN-15,Toulouse
+8,"0,78","0,5","0,5","0,33",KNN-15,Toulouse
+9,"0,73","0,44","0,44","0,29",KNN-15,Toulouse
+10,"0,68","0,4","0,4","0,25",KNN-15,Toulouse
+1,"0,95",0,0,0,Prob,Toulouse
+2,"0,89",0,0,0,Prob,Toulouse
+3,"0,84",0,0,0,Prob,Toulouse
+4,"0,78",0,0,0,Prob,Toulouse
+5,"0,73",0,0,0,Prob,Toulouse
+6,"0,68",0,0,0,Prob,Toulouse
+7,"0,73","0,29","0,29","0,17",Prob,Toulouse
+8,"0,73","0,38","0,38","0,23",Prob,Toulouse
+9,"0,73","0,44","0,44","0,29",Prob,Toulouse
+10,"0,68","0,4","0,4","0,25",Prob,Toulouse
+1,"0,95",0,0,0,RAG CoT,Toulouse
+2,"0,89",0,0,0,RAG CoT,Toulouse
+3,"0,84",0,0,0,RAG CoT,Toulouse
+4,"0,78",0,0,0,RAG CoT,Toulouse
+5,"0,73",0,0,0,RAG CoT,Toulouse
+6,"0,68",0,0,0,RAG CoT,Toulouse
+7,"0,68","0,14","0,14","0,08",RAG CoT,Toulouse
+8,"0,68","0,25","0,25","0,14",RAG CoT,Toulouse
+9,"0,68","0,33","0,33","0,2",RAG CoT,Toulouse
+10,"0,62","0,3","0,3","0,18",RAG CoT,Toulouse
+1,"0,94",0,0,0,RAG CoT,Wroclaw
+2,"0,94","0,5","0,5","0,33",RAG CoT,Wroclaw
+3,"0,89","0,33","0,33","0,2",RAG CoT,Wroclaw
+4,"0,83","0,25","0,25","0,14",RAG CoT,Wroclaw
+5,"0,77","0,2","0,2","0,11",RAG CoT,Wroclaw
+6,"0,77","0,33","0,33","0,2",RAG CoT,Wroclaw
+7,"0,71","0,29","0,29","0,17",RAG CoT,Wroclaw
+8,"0,71","0,38","0,38","0,23",RAG CoT,Wroclaw
+9,"0,71","0,44","0,44","0,29",RAG CoT,Wroclaw
+10,"0,77","0,6","0,6","0,43",RAG CoT,Wroclaw

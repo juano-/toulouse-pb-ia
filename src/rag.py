@@ -15,18 +15,34 @@ conn_params = {
 }
 """
 
-def get_embedding_by_project_id(project_id, conn_params):
+def get_embedding_by_project_id(project_id, conn_params, city="Toulouse", year=2022):
     
-    with psycopg2.connect(**conn_params) as conn:
-        with conn.cursor() as c:
-            c.execute("SELECT embedding FROM openai_3_large_embeddings WHERE project_id = %s", (project_id,))
-            result = c.fetchone()
-            if result:
-                embedding_str = result[0]
-                embedding_list = ast.literal_eval(embedding_str)
-                return np.array(embedding_list, dtype=float)
-            else:
-                raise ValueError(f"Project ID {project_id} not found.")
+    if city == "Toulouse":
+        with psycopg2.connect(**conn_params) as conn:
+            with conn.cursor() as c:
+                c.execute("SELECT embedding FROM openai_3_large_embeddings WHERE project_id = %s", (project_id,))
+                result = c.fetchone()
+                
+                if result:
+                    embedding_str = result[0]
+                    embedding_list = ast.literal_eval(embedding_str)
+                    return np.array(embedding_list, dtype=float)
+                else:
+                    raise ValueError(f"Project ID {project_id} not found.")
+    
+    if city=="Wroclaw":
+        with psycopg2.connect(**conn_params) as conn:
+            with conn.cursor() as c:
+                c.execute("SELECT embedding FROM openai_3_large_embeddings_pl WHERE project_id = %s AND year = %s", (project_id, year))
+                result = c.fetchone()
+                
+                if result:
+                    embedding_str = result[0]
+                    embedding_list = ast.literal_eval(embedding_str)
+                    return np.array(embedding_list, dtype=float)
+                else:
+                    raise ValueError(f"Project ID {project_id} not found.")
+
 
 
 def get_top_k_similar_projects(embedding, conn_params, k=10):
@@ -60,7 +76,23 @@ def get_top_k_similar_projects_from_22(embedding, conn_params, k=5):
             """
             cur.execute(query, (embedding_str, embedding_str, k))
             results = cur.fetchall()
-            return results  
+            return results
+
+def get_top_k_similar_projects_from_16(embedding, conn_params, k=5):
+    with psycopg2.connect(**conn_params) as conn:
+        with conn.cursor() as cur:
+            
+            embedding_str = '[' + ','.join(map(str, embedding)) + ']'
+            query = f"""
+                SELECT e.project_id, e.embedding <#> %s AS distance
+                FROM openai_3_large_embeddings_pl e
+                WHERE e.year=2016
+                ORDER BY e.embedding <#> %s
+                LIMIT %s
+            """
+            cur.execute(query, (embedding_str, embedding_str, k))
+            results = cur.fetchall()
+            return results   
         
 def get_top_k_similar_projects_from_22_by_district(embedding, district, conn_params, k=5):
     embedding_str = '[' + ','.join(map(str, embedding)) + ']'
@@ -70,6 +102,26 @@ def get_top_k_similar_projects_from_22_by_district(embedding, district, conn_par
         FROM openai_3_large_embeddings e
         INNER JOIN projects p ON p.project_id = e.project_id
         WHERE p.year = 2022
+        AND p.district = %s
+        ORDER BY e.embedding <#> %s
+        LIMIT %s
+    """
+
+    with psycopg2.connect(**conn_params) as conn:
+        with conn.cursor() as cur:
+            cur.execute(query, (embedding_str, district, embedding_str, k))
+            results = cur.fetchall()
+
+    return results
+
+def get_top_k_similar_projects_from_16_by_district(embedding, district, conn_params, k=5):
+    embedding_str = '[' + ','.join(map(str, embedding)) + ']'
+
+    query = """
+        SELECT e.project_id, e.embedding <#> %s AS distance
+        FROM openai_3_large_embeddings_pl e
+        INNER JOIN projects_pl p ON (p.project_id = e.project_id AND p.year = e.year)
+        WHERE p.year = 2016
         AND p.district = %s
         ORDER BY e.embedding <#> %s
         LIMIT %s

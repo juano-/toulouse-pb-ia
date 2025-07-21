@@ -1,0 +1,60 @@
+location;district_name;district_number
+Borek,Stare Miasto;Krzyki;2
+Brochów;Krzyki;2
+Gajowice, Powstańców Śląskich, Borek;Krzyki;2
+Gajowice, Powstańców Śląskich, Borek,Kuźniki, Nowy Dwór, Muchobór Mały;Krzyki;2
+Gajowice, Powstańców Śląskich, Borek,Leśnica, Maślice, Pracze Odrzańskie;Krzyki;2
+Gajowice, Powstańców Śląskich, Borek,Nadodrze, Ołbin, Stare Miasto, Plac Grunwaldzki, Przedmieście Świdnickie;Krzyki;2
+Gajowice, Powstańców Śląskich, Borek,Ołtaszyn, Wojszyce, Jagodno;Krzyki;2
+Grabiszyn-Grabiszynek, Krzyki-Partynice, Oporów, Klecina;Krzyki;2
+Grabiszyn-Grabiszynek, Krzyki-Partynice, Oporów, Klecina,Nadodrze, Ołbin, Stare Miasto, Plac Grunwaldzki, Przedmieście Świdnickie;Krzyki;2
+Grabiszyn-Grabiszynek, Krzyki-Partynice, Oporów, Klecina,Pilczyce-Kozanów-Popowice Płn., Gądów-Popowice Płd., Szczepin;Krzyki;2
+Grabiszyn-Grabiszynek,Pilczyce-Kozanów-Popowice Płn.;Krzyki;2
+Huby;Krzyki;2
+Huby, Gaj, Tarnogaj;Krzyki;2
+Huby, Gaj, Tarnogaj,Nadodrze, Ołbin, Stare Miasto, Plac Grunwaldzki, Przedmieście Świdnickie;Krzyki;2
+Karłowice-Różanka;Psie Pole;3
+Karłowice-Różanka, Kleczków;Psie Pole;3
+Karłowice-Różanka, Kleczków,Leśnica, Maślice, Pracze Odrzańskie;Psie Pole;3
+Karłowice-Różanka, Kleczków,Nadodrze, Ołbin, Stare Miasto, Plac Grunwaldzki, Przedmieście Świdnickie;Psie Pole;3
+Karłowice-Różanka,Huby;Psie Pole;3
+Klecina, Krzyki-Partynice, Oporów,Krzyki-Partynice, Klecina;Krzyki;2
+Krzyki-Partynice, Klecina,Klecina, Krzyki-Partynice;Krzyki;2
+Kuźniki, Nowy Dwór, Muchobór Mały,Gajowice, Powstańców Śląskich, Borek;Fabryczna;1
+Kuźniki, Nowy Dwór, Muchobór Mały,Grabiszyn-Grabiszynek, Krzyki-Partynice, Oporów, Klecina;Fabryczna;1
+Leśnica;Fabryczna;1
+Leśnica, Maślice, Pracze Odrzańskie;Fabryczna;1
+Leśnica, Maślice, Pracze Odrzańskie,Osobowice-Rędzin, Świniary, Lipa Piotrowska, Widawa, Polanowice-Poświętne-Ligota, Sołtysowice;Fabryczna;1
+Leśnica,Maślice;Fabryczna;1
+Muchobór Wielki;Fabryczna;1
+Muchobór Wielki, Żerniki, Jerzmanowo-Jarnołtów-Strachowice-Osiniec;Fabryczna;1
+Nadodrze, Ołbin, Stare Miasto, Plac Grunwaldzki, Przedmieście Świdnickie;Śródmieście;4
+Nadodrze, Ołbin, Stare Miasto, Plac Grunwaldzki, Przedmieście Świdnickie,Ołtaszyn, Wojszyce, Jagodno;Śródmieście;4
+Osobowice-Rędzin, Świniary, Lipa Piotrowska, Widawa, Polanowice-Poświętne-Ligota, Sołtysowice;Psie Pole;3
+Ołbin;Śródmieście;4
+Ołbin,Oporów;Śródmieście;4
+Ołtaszyn;Krzyki;2
+Ołtaszyn, Wojszyce, Jagodno;Krzyki;2
+Ołtaszyn, Wojszyce, Jagodno,Nadodrze, Ołbin, Stare Miasto, Plac Grunwaldzki, Przedmieście Świdnickie;Krzyki;2
+Pawłowice, Psie Pole-Zawidawie;Psie Pole;3
+Pawłowice, Psie Pole-Zawidawie,Nadodrze, Ołbin, Stare Miasto, Plac Grunwaldzki, Przedmieście Świdnickie;Psie Pole;3
+Pilczyce-Kozanów-Popowice Płn., Gądów-Popowice Płd., Szczepin;Fabryczna;1
+Pilczyce-Kozanów-Popowice Płn., Gądów-Popowice Płd., Szczepin,Kuźniki, Nowy Dwór, Muchobór Mały;Fabryczna;1
+Pilczyce-Kozanów-Popowice Płn., Gądów-Popowice Płd., Szczepin,Nadodrze, Ołbin, Stare Miasto, Plac Grunwaldzki, Przedmieście Świdnickie;Fabryczna;1
+Pilczyce-Kozanów-Popowice Płn.,Szczepin;Fabryczna;1
+Plac Grunwaldzki;Śródmieście;4
+Pracze Odrzańskie,Maślice;Fabryczna;1
+Przedmieście Oławskie;Stare Miasto;5
+Przedmieście Oławskie, Księże, Brochów, Bieńkowice;Stare Miasto;5
+Przedmieście Oławskie, Księże, Brochów, Bieńkowice,Huby, Gaj, Tarnogaj;Stare Miasto;5
+Przedmieście Oławskie, Księże, Brochów, Bieńkowice,Ołtaszyn, Wojszyce, Jagodno;Stare Miasto;5
+Przedmieście Oławskie,Psie Pole-Zawidawie;Stare Miasto;5
+Przedmieście Oławskie,Tarnogaj;Stare Miasto;5
+Stare Miasto;Stare Miasto;5
+Stare Miasto, Przedmieście Świdnickie,Przedmieście Świdnickie;Stare Miasto;5
+Strachocin-Swojczyce-Wojnów;Psie Pole;3
+Strachocin-Swojczyce-Wojnów,Zacisze-Zalesie-Szczytniki;Psie Pole;3
+Tarnogaj;Krzyki;2
+Widawa,Lipa Piotrowska, Widawa;Psie Pole;3
+Wojszyce;Krzyki;2
+Zacisze-Zalesie-Szczytniki, Biskupin-Sępolno-Dąbie-Bartoszowice, Kowale, Strachocin-Swojczyce-Wojnów;Śródmieście;4
