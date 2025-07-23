@@ -153,6 +153,40 @@ def load_prediction_set(df, ids_path, rows=37, city='Toulouse'):
         return {"message": "City Not Found.."}, 404
 
 
+def load_test_dataset(df, rows=5, city='Toulouse'):
+
+    if city == 'Toulouse':
+        
+        filtered = df[df['year'] == 2024]
+    
+        filtered = filtered.filter(['project_id', 'project_name', 'description', 'cost', 'district', 'votes', 'rank'])
+        filtered['district_number'] = filtered['district'].apply(lambda x: get_district_number(x))
+
+        
+        filtered.rename(
+            columns={'votes': 'real_votes', 'rank': 'real_rank'},
+            inplace=True)
+
+        filtered = filtered.iloc[0:rows,].reset_index(drop=True)
+
+        return filtered
+    
+    if city == 'Wroclaw':
+        
+        df = df.filter(['project_id', 'project_name', 'description', 'cost', 'district', 'district_number', 'votes', 'rank', 'year'])
+        filtered = df[df['year'] == 2017].reset_index(drop=True)
+
+        filtered.rename(
+            columns={'votes': 'real_votes', 'rank': 'real_rank'},
+            inplace=True)
+        
+        filtered = filtered.iloc[0:rows,]
+
+        return filtered
+    
+    else:
+        return {"message": "City Not Found.."}, 404
+
 
 
 if __name__ == "__main__":

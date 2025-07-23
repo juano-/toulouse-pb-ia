@@ -1,4 +1,4 @@
-project_id;votes;predicted_votes
+project_id;real_votes;predicted_votes
 242;245;175
 309;166;100
 365;34;75

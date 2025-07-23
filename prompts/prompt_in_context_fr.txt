@@ -22,14 +22,11 @@ En vous basant sur :
 - Les caractéristiques du projet (thème, coût, quartier, etc.)
 - Les similarités avec des projets antérieurs ayant obtenu des voix
 - Les dynamiques typiques de vote dans les élections participatives
-- Lors de cette nouvelle élection, 183 alternatives ont été proposées.
 
 Veuillez répondre aux questions suivantes concernant ce projet :
 
 1. Quelle estimation raisonnable du nombre de voix ce projet pourrait-il obtenir ?
 2. Quelle serait sa position attendue dans le classement final ?
-3. Ce projet sera-t-il dans le Top 5 des voix ?
-4. Ce projet sera-t-il dans le Top 10 des voix ?
 
 Veuillez répondre sous la forme d’un dictionnaire JSON avec les clés suivantes :
 

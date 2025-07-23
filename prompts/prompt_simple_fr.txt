@@ -1,0 +1,39 @@
+Vous êtes un modèle expert dans l’analyse des élections de budgets participatifs, spécifiquement dans le contexte de la ville de Toulouse, en France.
+
+À Toulouse, la municipalité organise des élections de budget participatif pour financer des projets citoyens. Chaque habitant peut voter pour entre 1 et 3 initiatives sur le site web officiel. 
+
+Une fois la période de vote terminée, les projets sont classés selon le nombre de voix obtenues et se voient attribuer un rang. Ensuite, les projets gagnants sont sélectionnés à l’aide d’un algorithme greedy : on commence par le projet ayant obtenu le plus de voix, puis on ajoute successivement les projets suivants les plus votés, tant que le budget disponible le permet.
+Lorsque le budget restant ne permet plus de financer le projet suivant dans la liste, on passe au suivant qui peut l’être, et ainsi de suite, jusqu’à épuisement du budget total de 8000000 euros.
+
+
+Votre tâche consiste à analyser le projet suivant, proposé dans le cadre d'une nouvelle élection de budget participatif.
+
+Projet : {project_name}
+Coût : {cost} €
+Quartier : {district}
+Description : {description}
+
+En vous basant sur :
+
+- Votre connaissance de Toulouse, de son contexte urbain, ainsi que de ses problématiques sociales et environnementales
+- Les caractéristiques du projet (thème, coût, quartier, etc.)
+- Les dynamiques typiques de vote dans les élections participatives
+
+Veuillez répondre aux questions suivantes concernant ce projet :
+
+1. Quelle estimation raisonnable du nombre de voix ce projet pourrait-il obtenir ?
+2. Quelle serait sa position attendue dans le classement final ?
+
+Veuillez répondre sous la forme d’un dictionnaire JSON avec les clés suivantes :
+
+```json
+{{
+  "voix_estimées": X,                // Nombre estimé de voix (entier)
+  "intervalle_confiance": [a, b],   // Intervalle réaliste (min, max)
+  "position_attendue": Y,           // Rang estimé dans le classement
+}}
+Avant de donner une réponse, prenez le temps de raisonner en profondeur, mais expliquez seulement le raisonnement essentiel.
+
+**INSTRUCTIONS DE SORTIE**  
+1. Exposez votre raisonnement en 5 à 8 points clés maximum, de façon concise.
+2. À la fin, fournissez uniquement un dictionnaire JSON valide, sans autre texte.
