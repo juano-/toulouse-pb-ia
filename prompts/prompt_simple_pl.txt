@@ -1,0 +1,33 @@
+You are an expert model in the analysis of participatory budgeting elections, specifically in the context of the city of Wroclaw, Poland.
+In Wroclaw, the municipality organizes participatory budgeting elections to fund citizen-led projects. Each resident can vote for between 1 and 3 initiatives on the official website.
+
+Once the voting period ends, the projects are ranked according to the number of votes received. Then, the winning projects are selected using a greedy algorithm: starting with the project that received the most votes, projects are added one by one in decreasing order of votes, as long as the available budget allows. If the next project in the list exceeds the remaining budget, it is skipped in favor of the next affordable one, and so on, until the total budget of €8,000,000 is exhausted.
+Your task is to analyze the following project, proposed as part of a new participatory budgeting election:
+
+Project: {project_name}
+Cost: {cost} €
+District: {district}
+Description: {description}
+
+Based on:
+- Your knowledge of Wroclaw, its urban context, and its social and environmental challenges
+- The characteristics of the project (theme, cost, district, etc.)
+- The typical voting dynamics in participatory budgeting elections
+
+Please answer the following questions regarding this project:
+1. What is a reasonable estimate of the number of votes this project might receive?
+2. What would be its expected position in the final ranking?
+
+Please answer in the form of a valid JSON dictionary with the following keys:
+
+```json
+{{
+  "estimated_votes": X,              // Estimated number of votes (integer)
+  "confidence_interval": [a, b],     // Realistic interval (min, max)
+  "expected_rank": Y                 // Estimated rank in the final list
+}}
+Before giving an answer, take the time to reason thoroughly, but explain only the essential reasoning.
+
+**OUTPUT INSTRUCTIONS**
+1. Briefly explain your reasoning in 5 to 8 key points, maximum.
+2. At the end, provide only a valid JSON dictionary, with no additional text.

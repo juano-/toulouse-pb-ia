@@ -63,12 +63,14 @@ def load_and_prepare_projects(path_1, path_2, city='Toulouse'):
                                     'year']
                                     )
         
-        d16 = df_merge[df_merge['year'] == 2016].reset_index(drop=True)
-        df16_shuffled = d16.sample(frac=1, random_state=42).reset_index(drop=True)
-
         df_merge.rename(
             columns={'district_name': 'district'},
             inplace=True)
+        
+        d16 = df_merge[df_merge['year'] == 2016].reset_index(drop=True)
+        df16_shuffled = d16.sample(frac=1, random_state=42).reset_index(drop=True)
+
+        
 
         return df_merge, df16_shuffled
 
