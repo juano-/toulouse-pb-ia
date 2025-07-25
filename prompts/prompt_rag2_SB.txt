@@ -80,5 +80,5 @@ Avant de donner une réponse, prenez le temps de raisonner en profondeur, mais e
 **INSTRUCTIONS DE SORTIE**  
 1. Faites d'abord un “step back” :
    - En 2 à 3 phrases, synthétisez les règles générales qui expliquent les résultats des projets lors des budgets participatifs à Toulouse (facteurs principaux, dynamiques de vote, etc.).
-   - Ensuite, appliquez ce cadre général à l’analyse du projet “Piétons, vélos et bus sur le boulevard Riquet”, en listant de 5 à 8 points clés qui justifient vos estimations.
+   - Ensuite, appliquez ce cadre général à l’analyse du projet {project_name}, en listant de 5 à 8 points clés qui justifient vos estimations.
 2. À la fin, fournissez uniquement un dictionnaire JSON valide, sans autre texte.
