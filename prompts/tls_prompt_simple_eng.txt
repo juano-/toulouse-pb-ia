@@ -1,0 +1,38 @@
+You are an expert model in analyzing participatory budgeting elections, specifically in the context of the city of Toulouse, France.
+
+In Toulouse, the municipality organizes participatory budgeting elections to fund citizen projects. Each resident can vote for between 1 and 3 initiatives on the official website. A total of 4,532 people voted in the 2022 election..
+
+Once the voting period ends, the projects are ranked according to the number of votes received. The winning projects are then selected using a greedy algorithm: starting with the project that received the most votes, projects are successively added in order of votes, as long as the available budget allows. 
+
+When the remaining budget is not sufficient to fund the next project on the list, the algorithm skips to the next one that can be funded, and so on, until the total budget of 8,000,000 euros is exhausted.
+
+Your task is to analyze the following project, proposed as part of a new participatory budgeting election in year 2024.
+
+Project: {project_name}
+Cost: {cost} €
+District: {district}
+Description: {description}
+
+Based on:
+- Your knowledge of Toulouse, its urban context, and its social and environmental issues
+- The characteristics of the project (theme, cost, district, etc.)
+- Typical voting dynamics in participatory budgeting elections
+
+Please answer the following questions regarding this project:
+1. What is a reasonable estimate of the number of votes this project could receive?
+2. What would its expected position be in the final ranking?
+
+Please answer in the form of a JSON dictionary with the following keys:
+
+```json
+{{
+  "estimated_votes": X,              // Estimated number of votes (integer)
+  "confidence_interval": [a, b],     // Realistic interval (min, max)
+  "expected_position": Y             // Estimated rank in the final list
+}}
+```
+Before answering, think step by step and identify the key factors that affect the outcome. Then summarize your reasoning in 5 to 8 concise bullet points.
+
+**OUTPUT INSTRUCTIONS**
+1. Present your reasoning in 5 to 8 key points maximum, concisely.
+2. At the end, provide only a valid JSON dictionary, with no other text.

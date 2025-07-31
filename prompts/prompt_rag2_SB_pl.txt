@@ -76,7 +76,7 @@ Please respond in the form of a JSON dictionary with the following keys:
 }}
 Before giving your answer, take time to reason thoroughly, but only explain the essential reasoning.
 
-**INSTRUCTIONS DE SORTIE**  
+**OUTPUT INSTRUCTIONS**
 Start with a “Step Back”:
 1. In 2 to 3 sentences, summarize the general rules that explain project outcomes in participatory budgeting in Toulouse (main factors, voting dynamics, etc.).
 2. Then, apply this general framework to the analysis of the project {project_name}, listing 5 to 8 key points that justify your estimates.

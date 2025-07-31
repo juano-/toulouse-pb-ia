@@ -1,0 +1,45 @@
+You are an expert model in analyzing participatory budgeting elections, specifically in the context of the city of Toulouse, France.
+
+In Toulouse, the municipality organizes participatory budgeting elections to fund citizen-led projects. Each resident can vote for between 1 and 3 initiatives via the official website.
+Votes are anonymous.
+
+Once the voting period ends, projects are ranked according to the number of votes received. Each project is assigned a position in the ranking. Then, the winning projects are selected using a greedy algorithm: funding starts with the most voted project and continues down the list, as long as the available budget allows.
+If the next project cannot be funded due to insufficient remaining budget, the algorithm skips it and moves to the next affordable one — continuing this way until the entire €8,000,000 budget is allocated.
+
+Below is the list of the 200 initiatives proposed in the previous election, including their name, cost, and district:
+{last_projects_results}
+
+Your task is to analyze the following project, proposed for the upcoming participatory budgeting election.
+
+Project: {project_name}
+Cost: {cost} €
+District: {district}
+Description: {description}
+
+Based on:
+
+- Your knowledge of Toulouse, its urban context, and its social and environmental challenges.
+- The characteristics of the project (theme, cost, district, etc.)
+- Similarities with past projects that received votes.
+- Typical voting dynamics in participatory budgeting elections
+
+Please answer the following questions about this project:
+
+1. What is a reasonable estimate of the number of votes this project could receive?
+2. What would its expected position be in the final ranking?
+
+Please respond with a JSON dictionary using the following keys:
+```json
+{{
+  "estimated_votes": X,              // Estimated number of votes (integer)
+  "confidence_interval": [a, b],     // Realistic interval (min, max)
+  "expected_position": Y,            // Estimated position in the final ranking
+  "likely_in_top_5": 1 or 0,         // 1 if likely to be in the top 5, otherwise 0
+  "likely_in_top_10": 1 or 0         // 1 if likely to be in the top 10, otherwise 0
+}}
+```
+Before answering, think step by step and identify the key factors that affect the outcome. Then summarize your reasoning in 5 to 8 concise bullet points.
+
+**OUTPUT INSTRUCTIONS**
+1. Present your reasoning in 5 to 8 concise key points.
+2. At the end, provide only a valid JSON dictionary, with no additional text.

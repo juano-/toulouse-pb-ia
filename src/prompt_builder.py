@@ -16,6 +16,14 @@ def get_all_projects_from_22_election(df22_shuffled):
     
     return projects_22_text
 
+def get_all_projects_from_22_election_eng(df22_shuffled):
+    projects_22_text = ""
+    
+    for _,row in df22_shuffled.iterrows():
+        projects_22_text += f"- {row['project_name_eng']}: (Cost: {row['cost']} €, District: {row['district']}). {row['votes']} Votes, Ranking: {row['rank']}\n"
+    
+    return projects_22_text
+
 def get_top_k_projects_from_22_election(df, k):
     projects_22_text = ""
      
@@ -24,6 +32,17 @@ def get_top_k_projects_from_22_election(df, k):
      
     for _ , row in df22.iterrows():
         projects_22_text += f"- {row['project_name']}: (Coût: {row['cost']} €, District: {row['district']}). {row['votes']} Voix, Classement: {row['rank']}\n"
+        
+    return projects_22_text
+
+def get_top_k_projects_from_22_election_eng(df,k):
+    projects_22_text = ""
+     
+    df22 = df[(df['year'] == 2022) & (df['rank']<=k)]
+    df22 = df22.sort_values(by=['votes'], ascending=False)
+     
+    for _ , row in df22.iterrows():
+        projects_22_text += f"- {row['project_name_eng']}: (Cost: {row['cost']} €, District: {row['district']}). {row['votes']} Votes, Ranking: {row['rank']}\n"
         
     return projects_22_text
 
@@ -124,15 +143,26 @@ def get_top_k_voted_in_district(df, district, k=3, year=2022):
     
     return projects_22_text
 
-def get_top_k_voted_in_district_eng(df, district, k=3, year=2016):
-    df16 = df[(df['year']==year) & (df['district'] == district)].sort_values(by=['votes'], ascending=False).iloc[0:k]
+def get_top_k_voted_in_district_eng(df, district, k=3, year=2022):
+    df22 = df[(df['year']==year) & (df['district'] == district)].sort_values(by=['votes'], ascending=False).iloc[0:k]
       
-    projects_16_text=""
+    projects_22_text=""
 
-    for _ , row in df16.iterrows():
-        projects_16_text += f"- {row['project_name'].strip()}: (Cost: {row['cost']} €). {row['votes']} Votes, Ranking: {row['rank']}\n"
+    for _ , row in df22.iterrows():
+        projects_22_text += f"- {row['project_name_eng'].strip()}: (Cost: {row['cost']} €). {row['votes']} Votes, Ranking: {row['rank']}\n"
     
-    return projects_16_text
+    return projects_22_text
+
+def get_top_k_voted_in_district_in_wro(df, district, k=3, year=2022):
+    df_yy = df[(df['year']==year) & (df['district'] == district)].sort_values(by=['votes'], ascending=False).iloc[0:k]
+      
+    projects_yy_text=""
+
+    for _ , row in df_yy.iterrows():
+        projects_yy_text += f"- {row['project_name'].strip()}: (Cost: {row['cost']} €). {row['votes']} Votes, Ranking: {row['rank']}\n"
+    
+    return projects_yy_text
+
 
 def get_top_k_similar_projects_in_22(df, project_id, conn_params,k=5):
     
@@ -144,6 +174,18 @@ def get_top_k_similar_projects_in_22(df, project_id, conn_params,k=5):
     projects_22_text=""
     for _,row in df_aux.iterrows():
         projects_22_text += f"- {row['project_name']}: (Coût: {row['cost']} €, District: {row['district']}). {row['votes']} Voix, Classement: {row['rank']}\n"
+    
+    return projects_22_text
+
+def get_top_k_similar_projects_in_22_eng(df, project_id, conn_params,k=5):
+    emb = rag.get_embedding_by_project_id(project_id,conn_params)
+    ids = [d[0] for d in rag.get_top_k_similar_projects_from_22(emb,conn_params, k+1) if d[0]!= project_id]
+
+    df_aux = df[df.project_id.isin(ids)]
+
+    projects_22_text=""
+    for _,row in df_aux.iterrows():
+        projects_22_text += f"- {row['project_name_eng']}: (Cost: {row['cost']} €, District: {row['district']}). {row['votes']} Votes, Ranking: {row['rank']}\n"
     
     return projects_22_text
 
@@ -170,6 +212,19 @@ def get_top_k_similar_projects_in_22_by_district(df, project_id, conn_params,k=5
     projects_22_text=""
     for _,row in df_aux.iterrows():
         projects_22_text += f"- {row['project_name'].strip()}: (Coût: {row['cost']} €, District: {row['district']}). {row['votes']} Voix, Classement: {row['rank']}\n"
+
+    return projects_22_text
+
+def get_top_k_similar_projects_in_22_by_district_eng(df, project_id, conn_params,k=5):
+    district = df[df['project_id'] == project_id]['district_number'].iloc[0]
+    emb = rag.get_embedding_by_project_id(project_id,conn_params)
+    ids = [d[0] for d in rag.get_top_k_similar_projects_from_22_by_district(emb, district, conn_params, k+1) if d[0]!= project_id]
+
+    df_aux = df[df.project_id.isin(ids)]
+
+    projects_22_text=""
+    for _,row in df_aux.iterrows():
+        projects_22_text += f"- {row['project_name_eng'].strip()}: (Cost: {row['cost']} €, District: {row['district']}). {row['votes']} Votes, Ranking: {row['rank']}\n"
 
     return projects_22_text
 

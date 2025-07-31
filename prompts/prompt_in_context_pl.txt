@@ -39,6 +39,7 @@ Please answer in the form of a JSON dictionary with the following keys:
   "in_top_5": 1 or 0,                // 1 if likely to be in the top 5, else 0
   "in_top_10": 1 or 0                // 1 if likely to be in the top 10, else 0
 }}
+```
 
 Before giving an answer, take the time to reason thoroughly, but only explain the essential reasoning.
 

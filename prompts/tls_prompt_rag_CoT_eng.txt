@@ -1,0 +1,82 @@
+You are an expert model in analyzing participatory budgeting elections, specifically in the context of the city of Toulouse, France.
+
+In Toulouse, the municipality organizes participatory budgeting elections to fund citizen-led projects. Each resident can vote for between 1 and 3 initiatives via the official website. Votes are anonymous.
+
+Here is how projects are selected:
+- All projects are ranked according to the number of votes received.
+- A greedy algorithm is applied: projects are funded in decreasing order of votes, as long as the total budget is not exceeded.
+- If a project is too expensive for the remaining budget, it is skipped and the algorithm proceeds to the next one.
+
+---
+
+In the 2022 election:
+- There were 4,532 voters, each allowed to vote for up to 3 projects.
+- A total of approximately 11,918 votes were cast across 200 projects.
+- The number of votes per project ranged from 2 to 492, with an average around 58 votes and an estimated standard deviation of 68.
+- Most projects received between 18 and 75 votes.
+- The total available budget was €8,000,000.
+
+In that edition, the 15 most voted projects were:
+
+{top_k_voted_22}
+
+Below is the number of proposed projects and the average number of votes received per district in the 2022 election:
+{project_count_and_avg_votes_by_district}
+
+---
+
+Your task now is to evaluate a new project submitted to the upcoming election, which features **183 proposed projects**, and a higher turnout is expected.
+
+**Project to analyze:**
+- Name: {project_name}
+- Cost: {cost} €
+- District: {district}
+- Description: {description}
+
+Based on:
+- Voting dynamics observed in the 2022 election
+- The cost, district, and theme of the project
+- Your understanding of the social, ecological, and political context in Toulouse
+
+---
+
+Additionally, here is a selection of similar projects from across the city presented in the 2022 election, showing strong semantic similarity with the project to be analyzed.
+Each entry includes:
+- the project name,
+- the district,
+- the estimated cost,
+- the number of votes received,
+- and its final ranking position.
+
+{top_k_similar_projects_in_22}
+
+---
+
+In the district of {district}, {count_of_projects22_in_quartier} projects were proposed in 2022. The most voted ones were:
+
+{top_k_voted_in_district}
+
+This year, {count_of_projects24_in_quartier} projects have been submitted in this district.
+
+Below is a selection of similar projects from the previous election, located in the same district:
+
+{top_k_similar_projects_in_district}
+
+---
+
+Please respond with a JSON dictionary using the following keys:
+
+```json
+{{
+  "estimated_votes": X,              // Estimated number of votes (integer)
+  "confidence_interval": [a, b],     // Realistic interval (min, max)
+  "expected_position": Y,            // Estimated rank in the final list
+  "likely_in_top_5": 1 or 0,         // 1 if likely to be in top 5, otherwise 0
+  "likely_in_top_10": 1 or 0         // 1 if likely to be in top 10, otherwise 0
+}}
+```
+Before answering, think step by step and identify the key factors that affect the outcome. Then summarize your reasoning in 5 to 8 concise bullet points.
+
+**OUTPUT INSTRUCTIONS**
+1. Present your reasoning in 5 to 8 key points maximum, concisely.
+2. At the end, provide only a valid JSON dictionary, with no other text.
